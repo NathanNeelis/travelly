@@ -1,0 +1,67 @@
+.map {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 100vh;
+  min-width: 40rem;
+
+  svg {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.st1 {
+  fill: #fafafa;
+}
+
+#Africa,
+#France,
+#Finland,
+#Portugal,
+#Letland,
+#Albanie,
+#Montenegro,
+#cyprus,
+#Polen,
+#Netherlands,
+#ireland,
+#icelamd,
+#Sweden,
+#Spain,
+#Turkey,
+#Germany,
+#uk,
+#Litouwen,
+#Estland,
+#Norway,
+#Greece,
+#Romenie,
+#Bulgary,
+#Italy,
+#russia,
+#whiteRussia,
+#Hungary,
+#Austria,
+#Chech,
+#servie,
+#slowaky,
+#Moldavie,
+#slovenie,
+#Belgium,
+#Swiss,
+#Bosnie,
+#NorthMarcedonie,
+#kosovo,
+#croatie,
+#Ukrain {
+  .st0 {
+    fill: #c1c1c0;
+  }
+
+  &:hover {
+    .st0 {
+      fill: #505050;
+    }
+  }
+}
