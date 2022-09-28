@@ -1,3 +1,5 @@
+@import "../../../styles/variables";
+
 .map {
   position: absolute;
   bottom: 0;
@@ -61,7 +63,7 @@
 
   &:hover {
     .st0 {
-      fill: #505050;
+      fill: $darkgrey;
     }
   }
 }

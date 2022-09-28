@@ -1,14 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,700;1,800;1,900&display=swap");
+@import "/src/view/styles/variables";
 
-// set colours
-$background: #fafafa;
-$orange: #ed8f3e;
-$green: #61a725;
-$white: #fff;
-$lightgrey: #e2e2e2;
-$midgrey: #939393;
-$grey: #a5a5a5;
-$darkgrey: #505050;
+// foundation
+@import "/src/view/styles/foundation/normalize.scss";
 
 * {
   margin: 0px;
@@ -16,9 +9,25 @@ $darkgrey: #505050;
   box-sizing: border-box;
 }
 
+html {
+  box-sizing: border-box;
+  font-family: $font-family;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $background;
+  *:focus {
+    outline: 0;
+  }
+}
+
 body {
   font-family: "Open Sans", sans-serif;
   background-color: $background;
+  margin: 0;
+  overflow-x: hidden;
 }
 
 h1,
@@ -27,6 +36,45 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Poppins", sans-serif;
+  font-family: $font-family-headers;
   color: $orange;
+}
+
+p {
+  margin: 0;
+  font-family: $font-family;
+  font-weight: $font-weight-normal;
+  font-size: 1rem;
+  line-height: 1.4rem;
+
+  &::selection {
+    background: $orange;
+    color: $white;
+  }
+}
+
+a,
+a:visited {
+  text-decoration: none;
+
+  &::selection {
+    background: $orange;
+  }
+}
+
+ul,
+li,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style-position: inside;
+
+  &::selection {
+    background: $orange;
+    color: $white;
+  }
+}
+
+ul {
+  width: 100%;
 }
