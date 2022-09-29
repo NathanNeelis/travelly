@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/react-gh-pages/static/css/main.1685a8fe.css",
+    "main.js": "/react-gh-pages/static/js/main.f18f9378.js",
+    "static/js/787.c6362caa.chunk.js": "/react-gh-pages/static/js/787.c6362caa.chunk.js",
+    "static/media/discover-orange.svg": "/react-gh-pages/static/media/discover-orange.33ceb4b645fb8e0b2dcf.svg",
+    "static/media/discover.svg": "/react-gh-pages/static/media/discover.4365cc615f231fa83e06.svg",
+    "static/media/destinations-orange.svg": "/react-gh-pages/static/media/destinations-orange.48237878909632d0ca59.svg",
+    "static/media/destinations.svg": "/react-gh-pages/static/media/destinations.f1bf31fb1b311c59de13.svg",
+    "index.html": "/react-gh-pages/index.html",
+    "static/media/contact-orange.svg": "/react-gh-pages/static/media/contact-orange.d50eec777c6722e2b72d.svg",
+    "static/media/contact.svg": "/react-gh-pages/static/media/contact.e9460bb83af86cd74cd8.svg",
+    "static/media/search-orange.svg": "/react-gh-pages/static/media/search-orange.529b10a6e3e827c7864e.svg",
+    "static/media/search.svg": "/react-gh-pages/static/media/search.cf08105ce8e621010084.svg",
+    "main.1685a8fe.css.map": "/react-gh-pages/static/css/main.1685a8fe.css.map",
+    "main.f18f9378.js.map": "/react-gh-pages/static/js/main.f18f9378.js.map",
+    "787.c6362caa.chunk.js.map": "/react-gh-pages/static/js/787.c6362caa.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1685a8fe.css",
+    "static/js/main.f18f9378.js"
+  ]
+}
