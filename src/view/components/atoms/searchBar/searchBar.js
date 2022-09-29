@@ -11,9 +11,6 @@ function SearchBar(props) {
           className={$.searchInput}
           placeholder="Search"
         />
-
-        {/* icon  */}
-        {/* <input type="submit" className={$.submitBtn} /> */}
       </form>
     </div>
   );

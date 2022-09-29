@@ -2,6 +2,7 @@ import $ from "./header.module.scss";
 import Map from "../../atoms/map/map";
 import SearchBar from "../../atoms/searchBar/searchBar";
 import Title from "../../atoms/title/title";
+import NavList from "../../atoms/navList/navList";
 
 function Header(props) {
   return (
@@ -9,6 +10,7 @@ function Header(props) {
       <Map />
       <Title />
       <SearchBar />
+      <NavList />
     </div>
   );
 }

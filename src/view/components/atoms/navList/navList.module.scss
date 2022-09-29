@@ -1,0 +1,91 @@
+@import "../../../styles/variables";
+
+.navList {
+  width: 20rem;
+  li {
+    list-style-type: none;
+    padding: 0.5rem 1rem 1rem 2.5rem;
+    margin-left: 2.3rem;
+    margin-top: 1rem;
+    color: grey;
+  }
+
+  .discover {
+    position: relative;
+    border-bottom: 1px solid $grey;
+    transition: all 0.3s ease-in-out;
+
+    &::after {
+      content: "";
+      width: 1.5rem;
+      height: 1.5rem;
+      background-image: url(../../../../../public/icons/discover.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: absolute;
+      top: 0.4rem;
+      left: 0;
+    }
+
+    &:hover {
+      border-bottom: 1px solid $orange;
+
+      &::after {
+        background-image: url(../../../../../public/icons/discover-orange.svg);
+      }
+    }
+  }
+
+  .destinations {
+    position: relative;
+    border-bottom: 1px solid $grey;
+    transition: all 0.3s ease-in-out;
+
+    &::after {
+      content: "";
+      width: 1.5rem;
+      height: 1.5rem;
+      background-image: url(../../../../../public/icons/destinations.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: absolute;
+      top: 0.4rem;
+      left: 0;
+    }
+
+    &:hover {
+      border-bottom: 1px solid $orange;
+      &::after {
+        background-image: url(../../../../../public/icons/destinations-orange.svg);
+      }
+    }
+  }
+
+  .contact {
+    position: relative;
+    border-bottom: 1px solid $grey;
+    transition: all 0.3s ease-in-out;
+
+    &::after {
+      content: "";
+      width: 1.5rem;
+      height: 1.5rem;
+      background-image: url(../../../../../public/icons/contact.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: absolute;
+      top: 0.4rem;
+      left: 0;
+    }
+
+    &:hover {
+      border-bottom: 1px solid $orange;
+      &::after {
+        background-image: url(../../../../../public/icons/contact-orange.svg);
+      }
+    }
+  }
+}
