@@ -83,6 +83,8 @@ function Filters(props) {
             </div>
           </div>
         </section>
+
+        <button className={$.submitBtn}>Search destination</button>
       </form>
     </div>
   );
