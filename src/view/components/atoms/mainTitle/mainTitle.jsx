@@ -1,6 +1,6 @@
-import $ from "./title.module.scss";
+import $ from "./mainTitle.module.scss";
 
-function HeaderTitle(props) {
+function MainTitle(props) {
   return (
     <div className={$.headerTitle}>
       <h1>travelly </h1>
@@ -9,4 +9,4 @@ function HeaderTitle(props) {
   );
 }
 
-export default HeaderTitle;
+export default MainTitle;

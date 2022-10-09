@@ -7,12 +7,12 @@
     padding: 0.5rem 1rem 1rem 2.5rem;
     margin-left: 2.3rem;
     margin-top: 1rem;
-    color: grey;
+    color: $midgrey;
   }
 
   .discover {
     position: relative;
-    border-bottom: 1px solid $grey;
+    border-bottom: 1px solid $midgrey;
     transition: all 0.3s ease-in-out;
 
     &::after {
@@ -39,7 +39,7 @@
 
   .destinations {
     position: relative;
-    border-bottom: 1px solid $grey;
+    border-bottom: 1px solid $midgrey;
     transition: all 0.3s ease-in-out;
 
     &::after {
@@ -65,7 +65,7 @@
 
   .contact {
     position: relative;
-    border-bottom: 1px solid $grey;
+    border-bottom: 1px solid $midgrey;
     transition: all 0.3s ease-in-out;
 
     &::after {

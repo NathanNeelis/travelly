@@ -1,0 +1,17 @@
+@import "../../../styles/variables";
+
+.discover {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: $background;
+  padding: 3rem;
+}
+
+.searchBarContainer {
+  // width: calc(100% - 4rem);
+  margin: 5rem 1rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

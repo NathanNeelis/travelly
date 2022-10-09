@@ -1,0 +1,13 @@
+@import "../../../styles/variables";
+
+.intro {
+  width: 100vw;
+  height: 100vh;
+  background-color: $background;
+  padding: 3rem;
+}
+
+.searchBarContainer {
+  width: 40rem;
+  margin: 3rem 1rem;
+}

@@ -1,0 +1,15 @@
+@import "../../../styles/variables";
+
+.divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+
+  .dividerIcon {
+    width: 0.75rem;
+    height: 0.75rem;
+    background-color: $orange;
+    transform: rotate(45deg);
+  }
+}
