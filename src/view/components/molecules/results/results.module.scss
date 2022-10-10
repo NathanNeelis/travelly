@@ -21,8 +21,8 @@
 .resultcard {
   background-color: $lightgrey;
   width: calc((67.5rem / 3) - 3rem);
-  height: 20rem;
-  border-radius: 0.3rem;
+  height: 25rem;
+  border-radius: 0.75rem;
   margin: 0.5rem;
   overflow: hidden;
   position: relative;
@@ -46,7 +46,7 @@
 
   &:hover {
     .resultcardGradient {
-      --myColor2: rgba(0, 0, 0, 0.6);
+      --myColor2: rgba(0, 0, 0, 0.5);
     }
 
     --myColor3: rgba(0, 0, 0, 0.6);
@@ -98,6 +98,8 @@
   align-items: start;
   justify-content: center;
   flex-direction: column;
+
+  margin: 6rem 0 0 0;
 }
 
 .resultWrapper {
@@ -126,25 +128,30 @@
     font-weight: 500;
     text-transform: uppercase;
     filter: drop-shadow(0px 2.5px 4px $darkgrey);
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 }
 
 .weatherCategory {
-  position: absolute;
-  top: 0;
+  //   position: absolute;
+  //   top: 0;
   z-index: 5;
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 
   div {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 1.5rem;
-    // min-width: 5rem;
     font-size: 0.5rem;
     font-weight: 900;
     color: $white;
@@ -152,7 +159,7 @@
     border-radius: 0.15rem;
     margin: 0 0.5rem;
     padding: 0 0.5rem 0 0;
-    opacity: 0.75;
+    opacity: 0.8;
 
     span {
       width: 1rem;
@@ -173,7 +180,7 @@
 
     &:hover {
       svg {
-        fill: red;
+        // fill: red;
       }
 
       opacity: 1;
