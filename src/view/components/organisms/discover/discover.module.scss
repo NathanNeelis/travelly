@@ -1,14 +1,20 @@
 @import "../../../styles/variables";
 
 .discover {
-  width: 100vw;
+  width: calc(min(67.5rem, 100%));
   min-height: 100vh;
   background-color: $background;
   padding: 3rem;
+
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .searchBarContainer {
-  // width: calc(100% - 4rem);
+  width: calc(100% - 4rem);
   margin: 5rem 1rem;
 
   display: flex;

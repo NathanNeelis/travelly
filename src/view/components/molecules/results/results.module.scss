@@ -1,0 +1,19 @@
+@import "../../../styles/variables";
+
+.resultcard {
+  background-color: $lightgrey;
+  width: 10rem;
+  height: 10rem;
+}
+
+.results {
+  width: calc(min(67.5rem, 100%));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: green;
+}
+
+.resultWrapper {
+  background: green;
+}

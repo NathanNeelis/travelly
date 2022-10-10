@@ -12,10 +12,12 @@ function Results(props) {
         </div>
       </div>
 
-      <div className={$.resultcard}>
-        {/* todo: create atom  */}
-        resultcards
-      </div>
+      <section className={$.resultWrapper}>
+        <div className={$.resultcard}>
+          {/* todo: create atom  */}
+          resultcards
+        </div>
+      </section>
     </div>
   );
 }

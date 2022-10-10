@@ -53,7 +53,7 @@ function Filters(props) {
                 name="km"
                 min="0"
                 max="5000"
-                value="1000"
+                // placeholder="1000"
               />
             </div>
 
@@ -73,7 +73,7 @@ function Filters(props) {
                 name="celcius"
                 min="-20"
                 max="40"
-                value="15"
+                // placeholder="15"
               />
             </div>
 
