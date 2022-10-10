@@ -2,6 +2,7 @@ import $ from "./discover.module.scss";
 import SectionHeader from "../../molecules/sectionHeader/sectionHeader";
 import SearchBar from "../../atoms/searchBar/searchBar";
 import Filters from "../../molecules/filters/filters";
+import Results from "../../molecules/results/results";
 
 function Discover(props) {
   return (
@@ -14,10 +15,9 @@ function Discover(props) {
 
       <div className={$.filter}>
         <Filters />
-        {/* 2. Filter options -> to be conluded 
-      2.1 Filter travel companions
-      2.2 Filter distances
-      2.3 filter Weahter  */}
+        <Results />
+
+        {/* todo: add props as results  */}
       </div>
     </div>
   );
