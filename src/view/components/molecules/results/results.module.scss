@@ -100,6 +100,13 @@
   flex-direction: column;
 
   margin: 6rem 0 0 0;
+
+  h5 {
+    font-size: 1.1rem;
+    color: $darkgrey;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
 }
 
 .resultWrapper {

@@ -5,7 +5,8 @@ function Results(props) {
     <div className={$.results}>
       <div className={$.resultsHeader}>
         <div className={$.title}>
-          <h6>results</h6>
+          <h5>The hidden gems</h5>
+          <p>150 results</p>
         </div>
       </div>
 
