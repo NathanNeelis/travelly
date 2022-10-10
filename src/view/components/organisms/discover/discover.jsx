@@ -32,6 +32,32 @@ function Discover(props) {
       image:
         "https://www.francecomfort.com/l/nl/library/download/urn:uuid:a3713af6-e347-4f43-b78a-7ad53eb75766/via+ferrata+4+frankrijk+haute+savoie+vakantie+luxe+appartement+portes+du+soleil+bergen+klimmen+wandelen.jpg?scaleType=3&width=1600&height=1000",
     },
+    {
+      locality: "a very long locality title",
+      country: "Italy",
+      tags: [
+        {
+          winter: "Frisky",
+          summer: "Scorching heat",
+        },
+      ],
+      slug: "123AdBaSDDC",
+      image:
+        "https://www.francecomfort.com/l/nl/library/download/urn:uuid:a3713af6-e347-4f43-b78a-7ad53eb75766/via+ferrata+4+frankrijk+haute+savoie+vakantie+luxe+appartement+portes+du+soleil+bergen+klimmen+wandelen.jpg?scaleType=3&width=1600&height=1000",
+    },
+    {
+      locality: "a very long locality title",
+      country: "Italy",
+      tags: [
+        {
+          winter: "Frisky",
+          summer: "Scorching heat",
+        },
+      ],
+      slug: "123AdBaSDDC",
+      image:
+        "https://www.francecomfort.com/l/nl/library/download/urn:uuid:a3713af6-e347-4f43-b78a-7ad53eb75766/via+ferrata+4+frankrijk+haute+savoie+vakantie+luxe+appartement+portes+du+soleil+bergen+klimmen+wandelen.jpg?scaleType=3&width=1600&height=1000",
+    },
   ];
 
   return (
