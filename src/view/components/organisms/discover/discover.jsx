@@ -45,7 +45,8 @@ function Discover(props) {
           <>
             <div className={$.loadMoreWrapper}>
               {/* TODO, CREATE A LOADING STATE  */}
-              <p>spinner</p>
+              {/* TODO create empty state */}
+              <p>No results</p>
             </div>
           </>
         )}
