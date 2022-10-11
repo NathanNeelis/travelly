@@ -10,7 +10,11 @@ function ResultCard(props) {
     },
   ];
   let slug = props.slug;
-  let image = props.image;
+  let image = props.image
+    ? props.image
+    : "https://www.acquario.nl/wp-content/uploads/2015/12/placeholder.gif";
+
+  console.log(image);
 
   return (
     <div className={$.resultcard}>

@@ -29,7 +29,8 @@ function Filters(props) {
         <section className={$.filters}>
           <div className={$.filtersBlock}>
             <div className={$.inputWrapper}>
-              <label htmlFor="people">People</label>
+              <label htmlFor="people">Nature</label>
+              <p>mountains, beach, island, urban</p>
               <input
                 type="number"
                 id={$.people}
@@ -62,6 +63,7 @@ function Filters(props) {
           </div>
 
           <div className={$.filtersBlock}>
+            <h2>Destination</h2>
             <div className={$.inputWrapper}>
               <label htmlFor={$.startingPoint}>Starting point</label>
               <input
@@ -120,7 +122,7 @@ function Filters(props) {
           </div>
 
           <div className={$.filtersBlock}>
-            <h2>Destination</h2>
+            <h2>Weather</h2>
             <div className={$.inputWrapper}>
               <label htmlFor="wheater">Weather</label>
               <span className={$.extraInfo}>Degrees in Celsius</span>
