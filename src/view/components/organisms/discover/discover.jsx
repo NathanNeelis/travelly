@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import $ from "./discover.module.scss";
 import SectionHeader from "../../molecules/sectionHeader/sectionHeader";
 import SearchBar from "../../atoms/searchBar/searchBar";
 import Filters from "../../molecules/filters/filters";
 import Results from "../../molecules/results/results";
-import { getData } from "../../../utils/getData";
+import { loadData } from "../../../utils/getData";
+import { useRecoilState, RecoilState } from "recoil";
+import { recoilFilters } from "../../../../constants/recoil-atoms";
 
 function Discover(props) {
   const [resultData, setResultData] = useState([]);
   const [showResults, setShowResults] = useState(12);
-
-  const url = "https://io-backend.azurewebsites.net/localities/";
+  const [filters, setFilters] = useRecoilState(recoilFilters);
 
   let resultsLength = resultData.length;
 
@@ -21,10 +21,10 @@ function Discover(props) {
   };
 
   useEffect(() => {
-    getData(url).then((data) => {
-      setResultData(data);
+    loadData(filters).then((results) => {
+      setResultData(results.data);
     });
-  }, []);
+  }, [filters]);
 
   const sendData = resultData.slice(0, showResults);
 
@@ -44,6 +44,7 @@ function Discover(props) {
         {!sendData.length > 0 && (
           <>
             <div className={$.loadMoreWrapper}>
+              {/* TODO, CREATE A LOADING STATE  */}
               <p>spinner</p>
             </div>
           </>

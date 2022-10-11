@@ -2,35 +2,38 @@ import $ from "./filters.module.scss";
 import Checkboxes from "../../atoms/checkbox/checkbox";
 import Radiobutton from "../../atoms/radiobutton/radiobutton";
 import { clickForLocation } from "../../../utils/geolocation";
+import { useRecoilState } from "recoil";
+import { recoilFilters } from "../../../../constants/recoil-atoms";
 
 function Filters(props) {
-  //statefull filter object
-  let filters = {
-    country: "",
-    region: "",
-    currency: "EUR",
-    europe: true,
-    shengen: true,
-    mountains: false,
-    island: false,
-    location: {
-      latitude: 0,
-      longitude: 0,
-    },
-    weather: {
-      summer: "",
-      winter: "",
-    },
-  };
+  const [filters, setFilters] = useRecoilState(recoilFilters);
+
+  function filterMountainCategory(event) {
+    console.log(event.target.value);
+    setFilters({
+      mountainCategory: event.target.value,
+    });
+  }
 
   return (
     <div>
       <form action="">
         <section className={$.filters}>
           <div className={$.filtersBlock}>
+            <h2>environment</h2>
             <div className={$.inputWrapper}>
-              <label htmlFor="people">Nature</label>
-              <p>mountains, beach, island, urban</p>
+              <label htmlFor="distance">Mountains</label>
+              <span className={$.extraInfo}>many -> fewer</span>
+              <input
+                type="range"
+                id="mountains"
+                name="mountains"
+                min="1"
+                max="4"
+                onChange={filterMountainCategory}
+              />
+              <label htmlFor="people">Mountains</label>
+              <p>mountains slider</p>
               <input
                 type="number"
                 id={$.people}
