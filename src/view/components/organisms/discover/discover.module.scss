@@ -44,3 +44,11 @@
     color: $white;
   }
 }
+
+.emptyState,
+.loadingState {
+  margin-top: 5rem;
+  padding: 1.5rem 3rem;
+  background-color: $lightgrey;
+  border-radius: 1rem;
+}
