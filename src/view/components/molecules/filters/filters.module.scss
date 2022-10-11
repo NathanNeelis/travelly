@@ -30,12 +30,38 @@ form {
     display: flex;
     flex-direction: column;
     margin-bottom: 1rem;
+    position: relative;
 
     input {
       color: $midgrey;
 
       &::placeholder {
         color: $grey;
+      }
+    }
+
+    .locationIcon {
+      position: absolute;
+      right: 0.5rem;
+      bottom: 0;
+
+      svg {
+        width: 1.5rem;
+        fill: $midgrey;
+
+        &:hover {
+          fill: $orange;
+        }
+      }
+    }
+
+    @keyframes spinner {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(1turn);
       }
     }
 
