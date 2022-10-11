@@ -3,11 +3,14 @@ import $ from "../../molecules/results/results.module.scss";
 function ResultCard(props) {
   let country = props.country;
   let locality = props.locality;
-  let tags = props.tags;
+  let tags = [
+    {
+      summer: "Scorching Heat",
+      winter: "Winter Wonderland",
+    },
+  ];
   let slug = props.slug;
   let image = props.image;
-
-  console.log("this should be the country", props);
 
   return (
     <div className={$.resultcard}>

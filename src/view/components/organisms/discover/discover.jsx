@@ -1,64 +1,33 @@
+import React, { useState, useEffect } from "react";
 import $ from "./discover.module.scss";
 import SectionHeader from "../../molecules/sectionHeader/sectionHeader";
 import SearchBar from "../../atoms/searchBar/searchBar";
 import Filters from "../../molecules/filters/filters";
 import Results from "../../molecules/results/results";
+import { getData } from "../../../utils/getData";
 
 function Discover(props) {
-  let fakeData = [
-    {
-      locality: "a very long locality title",
-      country: "United Kingdom",
-      tags: [
-        {
-          winter: "Winter Wonderland",
-          summer: "Mild summer",
-        },
-      ],
-      slug: "123AdBDC",
-      image:
-        "https://media-cdn.tripadvisor.com/media/vr-splice-j/05/63/b5/09.jpg",
-    },
-    {
-      locality: "a very long locality title",
-      country: "Italy",
-      tags: [
-        {
-          winter: "Frisky",
-          summer: "Scorching heat",
-        },
-      ],
-      slug: "123AdBaSDDC",
-      image:
-        "https://www.francecomfort.com/l/nl/library/download/urn:uuid:a3713af6-e347-4f43-b78a-7ad53eb75766/via+ferrata+4+frankrijk+haute+savoie+vakantie+luxe+appartement+portes+du+soleil+bergen+klimmen+wandelen.jpg?scaleType=3&width=1600&height=1000",
-    },
-    {
-      locality: "a very long locality title",
-      country: "Italy",
-      tags: [
-        {
-          winter: "Frisky",
-          summer: "Scorching heat",
-        },
-      ],
-      slug: "123AdBaSDDC",
-      image:
-        "https://www.francecomfort.com/l/nl/library/download/urn:uuid:a3713af6-e347-4f43-b78a-7ad53eb75766/via+ferrata+4+frankrijk+haute+savoie+vakantie+luxe+appartement+portes+du+soleil+bergen+klimmen+wandelen.jpg?scaleType=3&width=1600&height=1000",
-    },
-    {
-      locality: "a very long locality title",
-      country: "Italy",
-      tags: [
-        {
-          winter: "Frisky",
-          summer: "Scorching heat",
-        },
-      ],
-      slug: "123AdBaSDDC",
-      image:
-        "https://www.francecomfort.com/l/nl/library/download/urn:uuid:a3713af6-e347-4f43-b78a-7ad53eb75766/via+ferrata+4+frankrijk+haute+savoie+vakantie+luxe+appartement+portes+du+soleil+bergen+klimmen+wandelen.jpg?scaleType=3&width=1600&height=1000",
-    },
-  ];
+  const url = "https://io-backend.azurewebsites.net/localities/";
+  const [resultData, setResultData] = useState([]);
+  const [showResults, setShowResults] = useState(12);
+  let resultsLength = resultData.length;
+
+  const updateResults = () => {
+    setShowResults(showResults + 12);
+    console.log(showResults);
+  };
+
+  useEffect(() => {
+    getData(url).then((data) => {
+      setResultData(data);
+    });
+  }, []);
+
+  const sendData = resultData.slice(0, showResults);
+  // create buttons for pages
+
+  // set up states for filters
+  // how to query the filters?
 
   return (
     <div className={$.discover}>
@@ -70,33 +39,19 @@ function Discover(props) {
 
       <div className={$.filter}>
         <Filters />
-        <Results data={fakeData} />
-
-        {/* todo: add props as results  */}
+        {sendData && (
+          <>
+            <Results data={sendData} resultsLength={resultsLength} />
+          </>
+        )}
+        <div className={$.loadMoreWrapper}>
+          <button onClick={updateResults} className={$.loadMoreBtn}>
+            Load more
+          </button>
+        </div>
       </div>
     </div>
   );
 }
 
 export default Discover;
-
-{
-  /* Discover 
-      1. Header 
-      1.1 title
-      1.2 subtitle
-      1.3 search bar -> local storage for header searchbar?
-
-      2. Filter options -> to be conluded 
-      2.1 Filter travel companions
-      2.2 Filter distances
-      2.3 filter Weahter 
-
-      3.1 Search results
-      3.1 header
-      3.2 sorting option
-      3.3 result cards
-      
-      
-      */
-}

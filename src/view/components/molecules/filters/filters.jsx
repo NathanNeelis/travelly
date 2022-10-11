@@ -4,6 +4,25 @@ import Radiobutton from "../../atoms/radiobutton/radiobutton";
 import { clickForLocation } from "../../../utils/geolocation";
 
 function Filters(props) {
+  //statefull filter object
+  let filters = {
+    country: "",
+    region: "",
+    currency: "EUR",
+    europe: true,
+    shengen: true,
+    mountains: false,
+    island: false,
+    location: {
+      latitude: 0,
+      longitude: 0,
+    },
+    weather: {
+      summer: "",
+      winter: "",
+    },
+  };
+
   return (
     <div>
       <form action="">

@@ -21,3 +21,26 @@
   justify-content: center;
   align-items: center;
 }
+
+.loadMoreWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loadMoreBtn {
+  background-color: $white;
+  filter: drop-shadow(0px 2.5px 3px #d2d2d2);
+  border-radius: 0.3rem;
+  padding: 0.5rem 1rem;
+  margin: 3rem 0 0 0;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: $midgrey;
+
+  &:hover {
+    background-color: $orange;
+    color: $white;
+  }
+}
