@@ -19,6 +19,8 @@ function geoError(err) {
 
 // get geo location only when its triggered in click event
 export function clickForLocation() {
+  const locationInput = document.getElementById("startingPoint");
+
   console.time("Get location");
   console.time("Get coordinates");
   navigator.geolocation.getCurrentPosition(
@@ -34,6 +36,7 @@ export function clickForLocation() {
   // adds loading spinner on loading
   //   const locationSpinner = document.querySelector(".locationWrap");
   //   locationSpinner.classList.add("loading");
+  locationInput.value = "searching..";
 }
 
 // get GEO location by reverse geocoding

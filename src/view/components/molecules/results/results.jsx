@@ -23,6 +23,7 @@ function Results(props) {
               //   tags={data.tags}
               image={data.pictureUrl}
               slug={data.id}
+              id={data.id}
               key={data.id}
             />
           );
