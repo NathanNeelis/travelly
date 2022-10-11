@@ -7,13 +7,16 @@ function SearchBar(props) {
 
   function submitForm(event) {
     event.preventDefault();
+
+    let getMeTo = document.getElementById("resultSection");
+    getMeTo.scrollIntoView({ behavior: "smooth" }, true);
   }
 
   function queryFilter(event) {
-    event.preventDefault();
-    console.log(event.target.value);
+    let target = event.target.value;
+    console.log(target);
     setFilters({
-      q: event.target.value,
+      q: target,
     });
   }
 

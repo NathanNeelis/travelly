@@ -1,4 +1,5 @@
 import $ from "./checkbox.module.scss";
+import SvgBike from "../svgBike/svgBike";
 
 function Checkboxes(props) {
   return (
@@ -10,24 +11,11 @@ function Checkboxes(props) {
           <label className={$.checkboxWrapper}>
             <input type="checkbox" className={$.checkboxInput} />
             <span className={$.checkboxTile}>
-              <span className={$.checkboxIcon}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="29.89"
-                  height="24.917"
-                  viewBox="0 0 29.89 24.917"
-                >
-                  <g id={$.caravan} className={$.caravan}>
-                    <path
-                      className={$.caravanIcon}
-                      d="M9.983,30.937a2.99,2.99,0,1,0,2.99,2.99A2.99,2.99,0,0,0,9.983,30.937ZM31.7,27.17a54.111,54.111,0,0,0-3.239-8.326A3.834,3.834,0,0,0,25.985,12H16.972A3.929,3.929,0,0,0,13.5,14H4.013a1.992,1.992,0,0,0-1.993,1.993V31.934a1.993,1.993,0,0,0,1.993,1.993h.909a5.091,5.091,0,0,1,4.983-5.11,5.09,5.09,0,0,1,4.983,5.11h3.987a4.985,4.985,0,1,1,9.966,0A2.674,2.674,0,0,0,30.906,32.9C32.062,31.486,32.055,28.929,31.7,27.17ZM12.973,23.96a1,1,0,0,1-1,1H6.993a1,1,0,0,1-1-1V20.97a1,1,0,0,1,1-1h4.983a1,1,0,0,1,1,1Zm12.11,1H20.869a1,1,0,0,1-1-1V20.97a1,1,0,0,1,1-1h2.9a1,1,0,0,1,.783.38,9.827,9.827,0,0,1,1.5,3.387A1,1,0,0,1,25.084,24.957Zm-1.147,5.98a2.99,2.99,0,1,0,2.99,2.99A2.99,2.99,0,0,0,23.937,30.937Z"
-                      transform="translate(-2.019 -12)"
-                    />
-                  </g>
-                </svg>
+              <span className={$.checkboxIcon} id={$.bikeIcon}>
+                <SvgBike />
               </span>
             </span>
-            <span className={$.checkboxLabel}>Camper / Caravan</span>
+            <span className={$.checkboxLabel}>Bicycle</span>
           </label>
         </div>
 
@@ -81,32 +69,6 @@ function Checkboxes(props) {
               </span>
             </span>
             <span className={$.checkboxLabel}>Train</span>
-          </label>
-        </div>
-
-        {/* plane  */}
-        <div className={$.checkbox}>
-          <label className={$.checkboxWrapper}>
-            <input type="checkbox" className={$.checkboxInput} />
-            <span className={$.checkboxTile}>
-              <span className={$.checkboxIcon}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="29.464"
-                  height="29.456"
-                  viewBox="0 0 29.464 29.456"
-                >
-                  <g id={$.plane} className={$.plane}>
-                    <path
-                      className={$.planeIcon}
-                      d="M25.21,21.658c1.582,0,3.723-.227,4.223-2.19.465-1.826-.815-3.427-3.458-4.283a44.935,44.935,0,0,0-5.166-1.136L13.186,3.441a2.173,2.173,0,0,0-1.129-.783c-.317-.09-2.689-.516-3.161-.6a.489.489,0,0,0-.536.68L12.781,12.8c-1.8-.254-3.457-.473-4.732-.638-.978-1.8-2.17-4-2.24-4.136a1.415,1.415,0,0,0-1-.7c-.21-.033-2.237-.238-2.237-.238a.465.465,0,0,0-.522.583c1.667,6.977,1.536,6.659,1.722,7.216.781,2.36,5.883,4.317,16.053,6.163A31.536,31.536,0,0,0,25.21,21.658Zm-2.557,2.959a1.961,1.961,0,1,0,1.965-1.956A1.965,1.965,0,0,0,22.652,24.616ZM10.86,27.574V31.5H31.5V27.574Z"
-                      transform="translate(-2.032 -2.048)"
-                    />
-                  </g>
-                </svg>
-              </span>
-            </span>
-            <span className={$.checkboxLabel}>Plane</span>
           </label>
         </div>
       </div>

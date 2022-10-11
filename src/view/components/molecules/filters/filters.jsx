@@ -20,48 +20,45 @@ function Filters(props) {
       <form action="">
         <section className={$.filters}>
           <div className={$.filtersBlock}>
-            <h2>environment</h2>
+            <h2>Environment</h2>
             <div className={$.inputWrapper}>
-              <label htmlFor="distance">Mountains</label>
-              <span className={$.extraInfo}>many -> fewer</span>
-              <input
-                type="range"
-                id="mountains"
-                name="mountains"
-                min="1"
-                max="4"
-                onChange={filterMountainCategory}
-              />
-              <label htmlFor="people">Mountains</label>
-              <p>mountains slider</p>
-              <input
-                type="number"
-                id={$.people}
-                className={$.filtersInput}
-                placeholder="1"
-              />
-            </div>
-
-            <div className={$.inputWrapper}>
-              <label htmlFor="duration">Duration</label>
-              <div className={$.noteWrapper}>
-                <input
-                  type="number"
-                  id={$.duration}
-                  className={$.filtersInput}
-                  placeholder="1"
-                />
-                <span className={$.note}>hours</span>
+              <div className={$.toggleWrapper}>
+                <label className={$.switch}>
+                  <input type="checkbox" /> <div className={$.ball}></div>
+                </label>
+                <div className={$.filterPropertie}>Mountain areas</div>
               </div>
             </div>
 
             <div className={$.inputWrapper}>
-              <Checkboxes />
-              {/* resource: https://codepen.io/havardob/pen/BapJYMg  */}
+              <div className={$.toggleWrapper}>
+                <label className={$.switch}>
+                  <input type="checkbox" /> <div className={$.ball}></div>
+                </label>
+                <div className={$.filterPropertie}>Beach areas</div>
+              </div>
             </div>
 
             <div className={$.inputWrapper}>
-              <Radiobutton />
+              <div className={$.toggleWrapper}>
+                <label className={$.switch}>
+                  <input type="checkbox" /> <div className={$.ball}></div>
+                </label>
+                <div className={$.filterPropertie}>Metro availability</div>
+              </div>
+            </div>
+
+            <div className={$.inputWrapper}>
+              <label htmlFor="distance">Urban</label>
+              <span className={$.extraInfo}>Remote -> Urban</span>
+              <input
+                type="range"
+                id="km"
+                name="km"
+                min="0"
+                max="5000"
+                // placeholder="1000"
+              />
             </div>
           </div>
 
@@ -121,6 +118,10 @@ function Filters(props) {
             <div className={$.inputWrapper}>
               <Checkboxes />
               {/* resource: https://codepen.io/havardob/pen/BapJYMg  */}
+            </div>
+
+            <div className={$.inputWrapper}>
+              <Radiobutton />
             </div>
           </div>
 

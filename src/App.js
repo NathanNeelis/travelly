@@ -18,13 +18,11 @@ function App() {
 
         <main>
           <Discover />
-          <Destinations />
-          <Contact />
+          {/* <Destinations /> */}
+          {/* <Contact /> */}
         </main>
 
-        <footer>
-          <h2>footer</h2>
-        </footer>
+        <footer>{/* <h2>footer</h2> */}</footer>
       </div>
     </RecoilRoot>
   );

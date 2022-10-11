@@ -6,7 +6,7 @@ function Results(props) {
   let amountOfResults = props.resultsLength;
 
   return (
-    <div className={$.results}>
+    <div className={$.results} id="resultSection">
       <div className={$.resultsHeader}>
         <div className={$.title}>
           <h5>The hidden gems</h5>
