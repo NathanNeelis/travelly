@@ -1,6 +1,9 @@
 import $ from "./filters.module.scss";
 import Checkboxes from "../../atoms/checkbox/checkbox";
-import Radiobutton from "../../atoms/radiobutton/radiobutton";
+import LegalTravelling from "../../atoms/legalTravelling/legalTravelling";
+import Mountains from "../../atoms/mountains/mountains";
+import Beach from "../../atoms/beach/beach";
+import Metro from "../../atoms/metro/metro";
 import Summer from "../../atoms/summer/summer";
 import Winter from "../../atoms/winter/winter";
 import { testData } from "../../../utils/geolocation";
@@ -14,13 +17,12 @@ import { getData } from "../../../utils/getData";
 function Filters(props) {
   const [filters, setFilters] = useRecoilState(recoilFilters);
   const [geoFilters, setGeoFilters] = useRecoilState(userLocation);
+
   const options = {
     enableHighAccuracy: true,
     timeout: 5000,
     maximumAge: 0,
   };
-
-  console.log("geofilters", geoFilters);
 
   function success(position) {
     const coords = position.coords;
@@ -57,6 +59,26 @@ function Filters(props) {
     navigator.geolocation.getCurrentPosition(success, error, options);
     const locationInput = document.getElementById("startingPoint");
     locationInput.value = "searching";
+  }
+
+  function getUrbanRange(e) {
+    console.log(e.target.value);
+    if (e.target.value == 0) {
+      setFilters({
+        ...filters,
+        urbanRuralRemoteCategory: 1,
+      });
+    } else if (e.target.value == 1) {
+      setFilters({
+        ...filters,
+        urbanRuralRemoteCategory: undefined,
+      });
+    } else if (e.target.value == 2) {
+      setFilters({
+        ...filters,
+        urbanRuralRemoteCategory: 32,
+      });
+    }
   }
 
   return (
@@ -122,12 +144,17 @@ function Filters(props) {
             </div>
 
             <div className={$.inputWrapper}>
-              <Radiobutton title={"Legal travelling"} />
+              <LegalTravelling title={"Legal travelling"} />
             </div>
           </div>
 
           <div className={$.filtersBlock}>
-            <h2>Environment</h2>
+            <h2>
+              Environment{" "}
+              <span className={$.reset} id="resetEnv">
+                reset
+              </span>
+            </h2>
 
             <div className={$.inputWrapper}>
               <label htmlFor="distance">Urban</label>
@@ -135,11 +162,12 @@ function Filters(props) {
                 <span className={$.extraInfo}>Urban</span>
                 <input
                   type="range"
-                  id="km"
-                  name="km"
+                  id="urban"
+                  name="urban"
                   min="0"
-                  max="32"
-                  // placeholder="1000"
+                  max="2"
+                  onInput={getUrbanRange}
+                  placeholder="1"
                 />
                 <span className={$.extraInfo}>Remote</span>
               </div>
@@ -147,7 +175,7 @@ function Filters(props) {
 
             <div className={$.inputWrapper}>
               <div className={$.inputWrapper}>
-                <Radiobutton title={"Mountains"} />
+                <Mountains title={"Mountains"} />
               </div>
               {/* <div className={$.toggleWrapper}>
                 <label className={$.switch}>
@@ -159,13 +187,13 @@ function Filters(props) {
 
             <div className={$.inputWrapper}>
               <div className={$.inputWrapper}>
-                <Radiobutton title={"Beach"} />
+                <Beach title={"Beach"} />
               </div>
             </div>
 
             <div className={$.inputWrapper}>
               <div className={$.inputWrapper}>
-                <Radiobutton title={"Metro"} />
+                <Metro title={"Metro"} />
               </div>
             </div>
           </div>
@@ -183,7 +211,7 @@ function Filters(props) {
           </div>
         </section>
 
-        <button className={$.submitBtn}>Search destination</button>
+        <span className={$.submitBtn}>Search destination</span>
       </form>
     </div>
   );

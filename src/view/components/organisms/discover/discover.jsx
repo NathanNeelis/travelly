@@ -14,6 +14,10 @@ function Discover(props) {
   const [loadingState, setLoadingState] = useState(true);
   const [filters, setFilters] = useRecoilState(recoilFilters);
 
+  let resetBtn = document.getElementById("resetEnv");
+  let rbBtn = document.querySelectorAll("input[type=radio]");
+  let urbanSlider = document.getElementById("urban");
+
   let resultsLength = resultData.length;
 
   const updateResults = () => {
@@ -23,6 +27,24 @@ function Discover(props) {
 
   useEffect(() => {
     setLoadingState(true);
+
+    if (resetBtn) {
+      resetBtn.addEventListener("click", (e) => {
+        rbBtn.forEach((element) => {
+          element.checked = false;
+        });
+        urbanSlider.value = 1;
+        setFilters({
+          ...filters,
+          euMembership: undefined,
+          metroCategory: undefined,
+          mountainCategory: undefined,
+          coastalCategory: undefined,
+          urbanRuralRemoteCategory: undefined,
+        });
+      });
+    }
+
     loadData(filters).then((results) => {
       setResultData(results.data);
       setLoadingState(false);
@@ -30,9 +52,6 @@ function Discover(props) {
   }, [filters]);
 
   const sendData = resultData.slice(0, showResults);
-
-  // set up states for filters
-  // how to query the filters?
 
   return (
     <div className={$.discover}>

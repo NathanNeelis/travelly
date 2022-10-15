@@ -171,10 +171,23 @@ form {
   text-transform: uppercase;
   font-weight: 600;
   color: $midgrey;
+  cursor: pointer;
 
   &:hover {
     background-color: $orange;
     color: $white;
+  }
+}
+
+.reset {
+  font-weight: 300;
+  font-size: 0.8rem;
+  text-decoration: underline;
+  margin-left: 1rem;
+  cursor: pointer;
+
+  &:hover {
+    color: $orange;
   }
 }
 
