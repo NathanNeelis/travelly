@@ -5,6 +5,10 @@ import SvgWinter from "../svgWinter/svgWinter";
 import { getData } from "../../../utils/getData";
 import { useRecoilState } from "recoil";
 import { userLocation } from "../../../../constants/recoil-atoms";
+import SvgBike from "../svgBike/svgBike";
+import SvgCar from "../svgCar/svgCar";
+import SvgTrain from "../svgTrain/svgTrain";
+import SvgEco from "../svgEco/svgEco";
 
 function ResultCard(props) {
   const [extraData, setExtraData] = useState([]);
@@ -40,15 +44,6 @@ function ResultCard(props) {
         <h4>{country}</h4>
         <h2>{locality}</h2>
 
-        {extraData.length > 0 && (
-          <>
-            <p>Distance with car: {extraData[0].car.distanceText}</p>
-            <p>
-              Emission with car: {Math.round(extraData[0].car.co2grams)} grams
-            </p>
-          </>
-        )}
-
         <div className={$.weatherCategory}>
           <div>
             <span>
@@ -63,6 +58,81 @@ function ResultCard(props) {
             {tags[0].winter}
           </div>
         </div>
+      </div>
+
+      <div className={$.travelMethods}>
+        {extraData.length > 0 && (
+          <>
+            {geoFilters.train && extraData[0].train !== null && (
+              <>
+                <span className={$.travelIcon}>
+                  <div>
+                    <span className={$.locationIconWrapper}>
+                      <SvgTrain />
+                    </span>
+                    <p>{extraData[0].train.distanceText}</p>
+                  </div>
+                  <div>
+                    <span className={$.locationIconWrapper} id={$.ecoIcon}>
+                      <SvgEco />
+                    </span>
+                    <p>
+                      {/* {Math.round(extraData[0].train.co2grams)} */}
+                      medium
+                      {/* this needs to be dynamic  */}
+                    </p>
+                  </div>
+                </span>
+              </>
+            )}
+
+            {geoFilters.car && extraData[0].car !== null && (
+              <>
+                <span className={$.travelIcon}>
+                  <div>
+                    <span className={$.locationIconWrapper}>
+                      <SvgCar />
+                    </span>
+                    <p>{extraData[0].car.distanceText}</p>
+                  </div>
+                  <div>
+                    <span className={$.locationIconWrapper} id={$.ecoIcon}>
+                      <SvgEco />
+                    </span>
+                    <p>
+                      {/* {Math.round(extraData[0].train.co2grams)} */}
+                      medium
+                      {/* this needs to be dynamic  */}
+                    </p>
+                  </div>
+                </span>
+              </>
+            )}
+
+            {geoFilters.bicycle && extraData[0].bike !== null && (
+              <>
+                <span className={$.travelIcon}>
+                  <div>
+                    <span className={$.locationIconWrapper}>
+                      <SvgBike />
+                    </span>
+                    <p>{extraData[0].bike.distanceText}</p>
+                  </div>
+                  <div>
+                    <span className={$.locationIconWrapper} id={$.ecoIcon}>
+                      <SvgEco />
+                    </span>
+                    <p>
+                      {/* {Math.round(extraData[0].train.co2grams)} */}
+                      Zero
+                      {/* this needs to be dynamic  */}
+                    </p>
+                  </div>
+                </span>
+              </>
+            )}
+          </>
+        )}
       </div>
 
       {/* read more cta  */}

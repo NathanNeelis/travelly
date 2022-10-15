@@ -21,5 +21,8 @@ export const userLocation = atom({
   default: {
     longitude: undefined,
     latitude: undefined,
+    car: undefined,
+    train: undefined,
+    bicycle: undefined,
   },
 });

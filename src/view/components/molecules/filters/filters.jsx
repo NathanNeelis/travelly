@@ -20,6 +20,8 @@ function Filters(props) {
     maximumAge: 0,
   };
 
+  console.log("geofilters", geoFilters);
+
   function success(position) {
     const coords = position.coords;
     const longitude = coords.longitude;
@@ -30,6 +32,7 @@ function Filters(props) {
     });
 
     const locationInput = document.getElementById("startingPoint");
+    locationInput.value = "searching";
 
     const fetchUrl =
       "https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=" +
@@ -46,10 +49,14 @@ function Filters(props) {
 
   function error(err) {
     console.warn(`ERROR(${err.code}): ${err.message}`);
+    const locationInput = document.getElementById("startingPoint");
+    locationInput.value = "Could not find your location, please try again.";
   }
 
   function getLocation() {
     navigator.geolocation.getCurrentPosition(success, error, options);
+    const locationInput = document.getElementById("startingPoint");
+    locationInput.value = "searching";
   }
 
   return (
@@ -93,16 +100,6 @@ function Filters(props) {
                 </svg>
               </div>
             </div>
-            <input
-              type="hidden"
-              id="longitudeInput"
-              // onInput={filterLongitude}
-            />
-            <input
-              type="hidden"
-              id="latitudeInput"
-              // onInput={filterLatitude}
-            />
 
             {/* <div className={$.inputWrapper}>
               <label htmlFor="distance">Distance</label>
