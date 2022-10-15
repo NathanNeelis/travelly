@@ -177,12 +177,6 @@ function Filters(props) {
               <div className={$.inputWrapper}>
                 <Mountains title={"Mountains"} />
               </div>
-              {/* <div className={$.toggleWrapper}>
-                <label className={$.switch}>
-                  <input type="checkbox" /> <div className={$.ball}></div>
-                </label>
-                <div className={$.filterPropertie}>Mountain areas</div>
-              </div> */}
             </div>
 
             <div className={$.inputWrapper}>

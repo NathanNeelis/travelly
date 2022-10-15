@@ -4,7 +4,10 @@ function NavList(props) {
   return (
     <div className={$.navList}>
       <ul>
-        <li className={$.discover}>Discover</li>
+        <a href="#discover">
+          {" "}
+          <li className={$.discover}>Discover</li>
+        </a>
         <li className={$.destinations}>Destinations</li>
         <li className={$.contact}>Contact</li>
       </ul>

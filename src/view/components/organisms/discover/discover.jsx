@@ -54,7 +54,7 @@ function Discover(props) {
   const sendData = resultData.slice(0, showResults);
 
   return (
-    <div className={$.discover}>
+    <div className={$.discover} id="discover">
       <SectionHeader section={"Discover"} subtitle={"Where to next?"} />
 
       <div className={$.searchBarContainer}>

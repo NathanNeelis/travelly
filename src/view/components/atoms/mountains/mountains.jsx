@@ -17,7 +17,6 @@ function Radiobutton(props) {
   }
 
   function setMountainsNo(event) {
-    console.log("radiobutton event", event);
     if (event.target.checked) {
       setFilters({
         ...filters,

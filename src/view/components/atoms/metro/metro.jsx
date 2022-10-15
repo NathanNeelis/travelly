@@ -7,7 +7,6 @@ function Metro(props) {
   let name = props.title;
 
   function setMetroYes(event) {
-    console.log("radiobutton event", event);
     if (event.target.checked) {
       setFilters({
         ...filters,

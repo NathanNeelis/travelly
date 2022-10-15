@@ -17,7 +17,6 @@ function Beach(props) {
   }
 
   function setBeachNo(event) {
-    console.log("radiobutton event", event);
     if (event.target.checked) {
       setFilters({
         ...filters,
