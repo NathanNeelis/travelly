@@ -33,7 +33,6 @@ function Discover(props) {
         rbBtn.forEach((element) => {
           element.checked = false;
         });
-        urbanSlider.value = 1;
         setFilters({
           ...filters,
           euMembership: undefined,
