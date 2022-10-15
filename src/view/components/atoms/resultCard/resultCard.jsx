@@ -77,9 +77,12 @@ function ResultCard(props) {
                       <SvgEco />
                     </span>
                     <p>
-                      {/* {Math.round(extraData[0].train.co2grams)} */}
-                      medium
-                      {/* this needs to be dynamic  */}
+                      {extraData[0].train.bugetPercentage === 0 && <>Zero</>}
+                      {extraData[0].train.bugetPercentage > 0 &&
+                        extraData[0].train.bugetPercentage <= 1 && <>Low</>}
+                      {extraData[0].train.bugetPercentage > 1 &&
+                        extraData[0].train.bugetPercentage < 5 && <>Medium</>}
+                      {extraData[0].train.bugetPercentage >= 5 && <>High</>}
                     </p>
                   </div>
                 </span>
@@ -100,9 +103,14 @@ function ResultCard(props) {
                       <SvgEco />
                     </span>
                     <p>
-                      {/* {Math.round(extraData[0].train.co2grams)} */}
-                      medium
-                      {/* this needs to be dynamic  */}
+                      {extraData[0].car.co2grbugetPercentageams == 0 && (
+                        <>Zero</>
+                      )}
+                      {extraData[0].car.bugetPercentage > 0 &&
+                        extraData[0].car.bugetPercentage <= 1 && <>Low</>}
+                      {extraData[0].car.bugetPercentage > 1 &&
+                        extraData[0].car.bugetPercentage < 5 && <>Medium</>}
+                      {extraData[0].car.bugetPercentage >= 5 && <>High</>}
                     </p>
                   </div>
                 </span>
