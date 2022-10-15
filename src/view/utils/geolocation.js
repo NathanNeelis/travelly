@@ -119,7 +119,6 @@ function testData(data, inputField) {
     // const locationSpinner = document.querySelector('.locationWrap');
     // locationSpinner.classList.remove('loading');
 
-    inputField.placeholder =
-      "Your location can not be found, please type in manually";
+    inputField.placeholder = "Your location can not be found, please try again";
   }
 }

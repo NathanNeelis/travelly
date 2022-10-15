@@ -1,6 +1,8 @@
 import $ from "./filters.module.scss";
 import Checkboxes from "../../atoms/checkbox/checkbox";
 import Radiobutton from "../../atoms/radiobutton/radiobutton";
+import Summer from "../../atoms/summer/summer";
+import Winter from "../../atoms/winter/winter";
 import { clickForLocation } from "../../../utils/geolocation";
 import { useRecoilState } from "recoil";
 import { recoilFilters } from "../../../../constants/recoil-atoms";
@@ -19,49 +21,6 @@ function Filters(props) {
     <div>
       <form action="">
         <section className={$.filters}>
-          <div className={$.filtersBlock}>
-            <h2>Environment</h2>
-            <div className={$.inputWrapper}>
-              <div className={$.toggleWrapper}>
-                <label className={$.switch}>
-                  <input type="checkbox" /> <div className={$.ball}></div>
-                </label>
-                <div className={$.filterPropertie}>Mountain areas</div>
-              </div>
-            </div>
-
-            <div className={$.inputWrapper}>
-              <div className={$.toggleWrapper}>
-                <label className={$.switch}>
-                  <input type="checkbox" /> <div className={$.ball}></div>
-                </label>
-                <div className={$.filterPropertie}>Beach areas</div>
-              </div>
-            </div>
-
-            <div className={$.inputWrapper}>
-              <div className={$.toggleWrapper}>
-                <label className={$.switch}>
-                  <input type="checkbox" /> <div className={$.ball}></div>
-                </label>
-                <div className={$.filterPropertie}>Metro availability</div>
-              </div>
-            </div>
-
-            <div className={$.inputWrapper}>
-              <label htmlFor="distance">Urban</label>
-              <span className={$.extraInfo}>Remote -> Urban</span>
-              <input
-                type="range"
-                id="km"
-                name="km"
-                min="0"
-                max="5000"
-                // placeholder="1000"
-              />
-            </div>
-          </div>
-
           <div className={$.filtersBlock}>
             <h2>Destination</h2>
             <div className={$.inputWrapper}>
@@ -100,7 +59,7 @@ function Filters(props) {
               </div>
             </div>
 
-            <div className={$.inputWrapper}>
+            {/* <div className={$.inputWrapper}>
               <label htmlFor="distance">Distance</label>
               <span className={$.extraInfo}>
                 In kilometers from current location
@@ -113,7 +72,7 @@ function Filters(props) {
                 max="5000"
                 // placeholder="1000"
               />
-            </div>
+            </div> */}
 
             <div className={$.inputWrapper}>
               <Checkboxes />
@@ -121,28 +80,63 @@ function Filters(props) {
             </div>
 
             <div className={$.inputWrapper}>
-              <Radiobutton />
+              <Radiobutton title={"Legal travelling"} />
             </div>
           </div>
 
           <div className={$.filtersBlock}>
-            <h2>Weather</h2>
+            <h2>Environment</h2>
+
             <div className={$.inputWrapper}>
-              <label htmlFor="wheater">Weather</label>
-              <span className={$.extraInfo}>Degrees in Celsius</span>
-              <input
-                type="range"
-                id="celcius"
-                name="celcius"
-                min="-20"
-                max="40"
-                // placeholder="15"
-              />
+              <label htmlFor="distance">Urban</label>
+              <div className={$.rangeWrapper}>
+                <span className={$.extraInfo}>Urban</span>
+                <input
+                  type="range"
+                  id="km"
+                  name="km"
+                  min="0"
+                  max="32"
+                  // placeholder="1000"
+                />
+                <span className={$.extraInfo}>Remote</span>
+              </div>
             </div>
 
             <div className={$.inputWrapper}>
-              <Checkboxes />
-              {/* resource: https://codepen.io/havardob/pen/BapJYMg  */}
+              <div className={$.inputWrapper}>
+                <Radiobutton title={"Mountains"} />
+              </div>
+              {/* <div className={$.toggleWrapper}>
+                <label className={$.switch}>
+                  <input type="checkbox" /> <div className={$.ball}></div>
+                </label>
+                <div className={$.filterPropertie}>Mountain areas</div>
+              </div> */}
+            </div>
+
+            <div className={$.inputWrapper}>
+              <div className={$.inputWrapper}>
+                <Radiobutton title={"Beach"} />
+              </div>
+            </div>
+
+            <div className={$.inputWrapper}>
+              <div className={$.inputWrapper}>
+                <Radiobutton title={"Metro"} />
+              </div>
+            </div>
+          </div>
+
+          <div className={$.filtersBlock}>
+            <h2>Climate</h2>
+
+            <div className={$.inputWrapper}>
+              <Summer />
+            </div>
+
+            <div className={$.inputWrapper}>
+              <Winter />
             </div>
           </div>
         </section>

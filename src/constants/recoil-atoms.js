@@ -15,3 +15,11 @@ export const recoilFilters = atom({
     q: undefined, // string format search query -> countries / region / district
   },
 });
+
+export const userLocation = atom({
+  key: "userLocation",
+  default: {
+    longitude: "",
+    latitude: "",
+  },
+});

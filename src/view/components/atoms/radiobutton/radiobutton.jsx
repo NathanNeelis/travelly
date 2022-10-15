@@ -1,16 +1,18 @@
 import $ from "./radiobutton.module.scss";
 
 function Radiobutton(props) {
+  let name = props.title;
+
   return (
     <div className={$.radiobuttons}>
-      <legend>Legal Travelling</legend>
+      <legend>{name}</legend>
       <div className={$.radiobuttonsWrapper}>
         <label>
-          <input type="radio" name="legaltravelling" checked />
+          <input type="radio" name={name} checked />
           <span className={$.radiobuttonsTile}>Yes</span>
         </label>
         <label>
-          <input type="radio" name="legaltravelling" />
+          <input type="radio" name={name} />
           <span className={$.radiobuttonsTile}>No</span>
         </label>
       </div>

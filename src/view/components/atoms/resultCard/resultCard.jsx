@@ -7,8 +7,8 @@ import { getData } from "../../../utils/getData";
 function ResultCard(props) {
   const [extraData, setExtraData] = useState([]);
 
-  let latitude = "52.790988875687404";
-  let longitude = "6.849266709366851";
+  let latitude = "52.6732707";
+  let longitude = "4.7706237";
   let destinationId = props.id;
   let url = `https://io-backend.azurewebsites.net/localities/travel?originCountry=132&originLatLong=${latitude}%2C${longitude}&destinations=${destinationId}`;
 
@@ -28,12 +28,6 @@ function ResultCard(props) {
       setExtraData(results);
     });
   }, []);
-
-  // const carDistance = extraData[0].car.distance;
-  const carData = extraData[0];
-
-  console.log("extradata", extraData[0]);
-  // console.log("cardata", carDistance, carEmission);
 
   return (
     <div className={$.resultcard}>
