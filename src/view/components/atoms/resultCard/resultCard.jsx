@@ -3,12 +3,15 @@ import $ from "../../molecules/results/results.module.scss";
 import SvgSummer from "../svgSummer/svgSummer";
 import SvgWinter from "../svgWinter/svgWinter";
 import { getData } from "../../../utils/getData";
+import { useRecoilState } from "recoil";
+import { userLocation } from "../../../../constants/recoil-atoms";
 
 function ResultCard(props) {
   const [extraData, setExtraData] = useState([]);
+  const [geoFilters, setGeoFilters] = useRecoilState(userLocation);
 
-  let latitude = "52.6732707";
-  let longitude = "4.7706237";
+  let latitude = geoFilters.latitude;
+  let longitude = geoFilters.longitude;
   let destinationId = props.id;
   let url = `https://io-backend.azurewebsites.net/localities/travel?originCountry=132&originLatLong=${latitude}%2C${longitude}&destinations=${destinationId}`;
 
@@ -24,10 +27,12 @@ function ResultCard(props) {
   let image = props.image;
 
   useEffect(() => {
-    getData(url).then((results) => {
-      setExtraData(results);
-    });
-  }, []);
+    if (latitude && longitude) {
+      getData(url).then((results) => {
+        setExtraData(results);
+      });
+    }
+  }, [geoFilters]);
 
   return (
     <div className={$.resultcard}>

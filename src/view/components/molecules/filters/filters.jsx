@@ -3,18 +3,53 @@ import Checkboxes from "../../atoms/checkbox/checkbox";
 import Radiobutton from "../../atoms/radiobutton/radiobutton";
 import Summer from "../../atoms/summer/summer";
 import Winter from "../../atoms/winter/winter";
-import { clickForLocation } from "../../../utils/geolocation";
+import { testData } from "../../../utils/geolocation";
 import { useRecoilState } from "recoil";
-import { recoilFilters } from "../../../../constants/recoil-atoms";
+import {
+  recoilFilters,
+  userLocation,
+} from "../../../../constants/recoil-atoms";
+import { getData } from "../../../utils/getData";
 
 function Filters(props) {
   const [filters, setFilters] = useRecoilState(recoilFilters);
+  const [geoFilters, setGeoFilters] = useRecoilState(userLocation);
+  const options = {
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 0,
+  };
 
-  function filterMountainCategory(event) {
-    console.log(event.target.value);
-    setFilters({
-      mountainCategory: event.target.value,
+  function success(position) {
+    const coords = position.coords;
+    const longitude = coords.longitude;
+    const latitude = coords.latitude;
+    setGeoFilters({
+      longitude,
+      latitude,
     });
+
+    const locationInput = document.getElementById("startingPoint");
+
+    const fetchUrl =
+      "https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=" +
+      latitude +
+      "&longitude=" +
+      longitude +
+      "&localityLanguage=en";
+
+    getData(fetchUrl).then((data) => {
+      testData(data, locationInput);
+      console.timeEnd("Get location");
+    });
+  }
+
+  function error(err) {
+    console.warn(`ERROR(${err.code}): ${err.message}`);
+  }
+
+  function getLocation() {
+    navigator.geolocation.getCurrentPosition(success, error, options);
   }
 
   return (
@@ -39,7 +74,7 @@ function Filters(props) {
                   y="0px"
                   viewBox="0 0 25 24.9"
                   width="30"
-                  onClick={clickForLocation}
+                  onClick={getLocation}
                 >
                   <g>
                     <path
@@ -58,6 +93,16 @@ function Filters(props) {
                 </svg>
               </div>
             </div>
+            <input
+              type="hidden"
+              id="longitudeInput"
+              // onInput={filterLongitude}
+            />
+            <input
+              type="hidden"
+              id="latitudeInput"
+              // onInput={filterLatitude}
+            />
 
             {/* <div className={$.inputWrapper}>
               <label htmlFor="distance">Distance</label>

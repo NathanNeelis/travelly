@@ -19,7 +19,7 @@ export const recoilFilters = atom({
 export const userLocation = atom({
   key: "userLocation",
   default: {
-    longitude: "",
-    latitude: "",
+    longitude: undefined,
+    latitude: undefined,
   },
 });
