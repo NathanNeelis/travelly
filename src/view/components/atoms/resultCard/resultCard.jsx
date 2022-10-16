@@ -23,12 +23,30 @@ function ResultCard(props) {
   let locality = props.locality;
   let tags = [
     {
-      summer: "Scorching Heat",
-      winter: "Winter Wonderland",
+      summer: climate(props.tags[0].tag),
+      winter: climate(props.tags[1].tag),
     },
   ];
   let slug = props.slug;
   let image = props.image;
+
+  function climate(tag) {
+    if (tag === "escapeTheHeat") {
+      return "Escape The Heat";
+    } else if (tag === "winterWonderland") {
+      return "Winter Wonderland";
+    } else if (tag === "scorchingHeat") {
+      return "Scorching Heat";
+    } else if (tag === "escapeTheCold") {
+      return "Escape The Cold";
+    } else if (tag === "mildSummer") {
+      return "Mild Summer";
+    } else if (tag === "frisky") {
+      return "Frisky";
+    } else {
+      return tag;
+    }
+  }
 
   useEffect(() => {
     if (latitude && longitude) {

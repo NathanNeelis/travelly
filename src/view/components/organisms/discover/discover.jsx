@@ -14,9 +14,14 @@ function Discover(props) {
   const [loadingState, setLoadingState] = useState(true);
   const [filters, setFilters] = useRecoilState(recoilFilters);
 
+  // checkbox filters
+  let cbMountains = document.getElementById("cbMountains");
+  let cbBeach = document.getElementById("cbBeach");
+  let cbIsland = document.getElementById("cbIsland");
+  let cbMetro = document.getElementById("cbMetro");
+
   let resetBtn = document.getElementById("resetEnv");
   let rbBtn = document.querySelectorAll("input[type=radio]");
-  let urbanSlider = document.getElementById("urban");
 
   let resultsLength = resultData.length;
 
@@ -28,8 +33,13 @@ function Discover(props) {
   useEffect(() => {
     setLoadingState(true);
 
-    if (resetBtn) {
+    if (resetBtn && loadingState === false) {
       resetBtn.addEventListener("click", (e) => {
+        cbMountains.checked = false;
+        cbBeach.checked = false;
+        cbIsland.checked = false;
+        cbMetro.checked = false;
+
         rbBtn.forEach((element) => {
           element.checked = false;
         });
@@ -40,6 +50,7 @@ function Discover(props) {
           mountainCategory: undefined,
           coastalCategory: undefined,
           urbanRuralRemoteCategory: undefined,
+          isIsland: undefined,
         });
       });
     }

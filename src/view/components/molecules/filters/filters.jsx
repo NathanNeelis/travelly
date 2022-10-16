@@ -6,6 +6,8 @@ import Beach from "../../atoms/beach/beach";
 import Metro from "../../atoms/metro/metro";
 import Summer from "../../atoms/summer/summer";
 import Winter from "../../atoms/winter/winter";
+import Transport from "../../atoms/transport/transport";
+import Surroundings from "../../atoms/surroundings/surroundings";
 import { testData } from "../../../utils/geolocation";
 import { useRecoilState } from "recoil";
 import {
@@ -62,7 +64,6 @@ function Filters(props) {
   }
 
   function getUrbanRange(e) {
-    console.log(e.target.value);
     if (e.target.value == 0) {
       setFilters({
         ...filters,
@@ -173,13 +174,16 @@ function Filters(props) {
               </div>
             </div>
 
+            <Surroundings />
+            <Transport />
+            {/* 
             <div className={$.inputWrapper}>
               <div className={$.inputWrapper}>
                 <Mountains title={"Mountains"} />
               </div>
-            </div>
+            </div> */}
 
-            <div className={$.inputWrapper}>
+            {/* <div className={$.inputWrapper}>
               <div className={$.inputWrapper}>
                 <Beach title={"Beach"} />
               </div>
@@ -189,7 +193,7 @@ function Filters(props) {
               <div className={$.inputWrapper}>
                 <Metro title={"Metro"} />
               </div>
-            </div>
+            </div> */}
           </div>
 
           <div className={$.filtersBlock}>

@@ -1,0 +1,10 @@
+@import "../../../styles/variables";
+@import "../../atoms/summer/summer.module.scss";
+
+#mountainIcon {
+  height: 2.7rem;
+  svg {
+    width: 2.7rem;
+    height: 2.7rem;
+  }
+}

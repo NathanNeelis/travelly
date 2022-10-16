@@ -20,7 +20,7 @@ function Results(props) {
             <ResultCard
               country={data.countryEnglishName}
               locality={data.name}
-              //   tags={data.tags}
+              tags={data.tags}
               image={data.pictureUrl}
               slug={data.id}
               id={data.id}

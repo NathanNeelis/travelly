@@ -13,6 +13,18 @@ export const recoilFilters = atom({
     schengenMembership: undefined, // boolean
     euMembership: undefined, //boolean
     q: undefined, // string format search query -> countries / region / district
+    tags: undefined,
+  },
+});
+
+export const climateFilter = atom({
+  key: "climateFilter",
+  default: {
+    longitude: undefined,
+    latitude: undefined,
+    car: undefined,
+    train: undefined,
+    bicycle: undefined,
   },
 });
 
