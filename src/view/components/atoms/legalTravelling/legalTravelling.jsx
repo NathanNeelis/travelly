@@ -41,12 +41,7 @@ function LegalTravelling(props) {
 
   return (
     <div className={$.radiobuttons}>
-      <legend>
-        {name}{" "}
-        <span className={$.reset} id="reset">
-          reset
-        </span>
-      </legend>
+      <legend>{name}</legend>
       <div className={$.radiobuttonsWrapper}>
         <label>
           <input type="radio" name={name} id="LTYes" onInput={setLTYes} />
