@@ -1,9 +1,6 @@
 import $ from "./filters.module.scss";
 import Checkboxes from "../../atoms/checkbox/checkbox";
 import LegalTravelling from "../../atoms/legalTravelling/legalTravelling";
-import Mountains from "../../atoms/mountains/mountains";
-import Beach from "../../atoms/beach/beach";
-import Metro from "../../atoms/metro/metro";
 import Summer from "../../atoms/summer/summer";
 import Winter from "../../atoms/winter/winter";
 import Transport from "../../atoms/transport/transport";
@@ -124,21 +121,6 @@ function Filters(props) {
               </div>
             </div>
 
-            {/* <div className={$.inputWrapper}>
-              <label htmlFor="distance">Distance</label>
-              <span className={$.extraInfo}>
-                In kilometers from current location
-              </span>
-              <input
-                type="range"
-                id="km"
-                name="km"
-                min="0"
-                max="5000"
-                // placeholder="1000"
-              />
-            </div> */}
-
             <div className={$.inputWrapper}>
               <Checkboxes />
               {/* resource: https://codepen.io/havardob/pen/BapJYMg  */}
@@ -176,24 +158,6 @@ function Filters(props) {
 
             <Surroundings />
             <Transport />
-            {/* 
-            <div className={$.inputWrapper}>
-              <div className={$.inputWrapper}>
-                <Mountains title={"Mountains"} />
-              </div>
-            </div> */}
-
-            {/* <div className={$.inputWrapper}>
-              <div className={$.inputWrapper}>
-                <Beach title={"Beach"} />
-              </div>
-            </div>
-
-            <div className={$.inputWrapper}>
-              <div className={$.inputWrapper}>
-                <Metro title={"Metro"} />
-              </div>
-            </div> */}
           </div>
 
           <div className={$.filtersBlock}>

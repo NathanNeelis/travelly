@@ -32,6 +32,7 @@ function Discover(props) {
 
   useEffect(() => {
     setLoadingState(true);
+    setResultData([]);
 
     if (resetBtn && loadingState === false) {
       resetBtn.addEventListener("click", (e) => {
@@ -78,7 +79,25 @@ function Discover(props) {
             <div className={$.loadMoreWrapper}>
               {/* TODO, CREATE A LOADING STATE  */}
               {/* TODO create empty state */}
-              <p className={$.loadingState}>Loading.. Hold on :)</p>
+              <div className={$.loadingState}>
+                <div className={$.spinnerWrapper}>
+                  <div className={$.ldsSpinner}>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                  </div>
+                </div>
+                <p>Loading.. Hold on</p>
+              </div>
             </div>
           </>
         )}
