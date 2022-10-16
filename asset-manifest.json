@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/travelly/static/css/main.ecfe12fb.css",
-    "main.js": "/travelly/static/js/main.3ff2e4d0.js",
+    "main.css": "/travelly/static/css/main.ed03a25a.css",
+    "main.js": "/travelly/static/js/main.64364e89.js",
     "static/js/787.c6362caa.chunk.js": "/travelly/static/js/787.c6362caa.chunk.js",
     "static/media/discover-orange.svg": "/travelly/static/media/discover-orange.33ceb4b645fb8e0b2dcf.svg",
     "static/media/discover.svg": "/travelly/static/media/discover.4365cc615f231fa83e06.svg",
@@ -12,12 +12,12 @@
     "static/media/contact.svg": "/travelly/static/media/contact.e9460bb83af86cd74cd8.svg",
     "static/media/search-orange.svg": "/travelly/static/media/search-orange.529b10a6e3e827c7864e.svg",
     "static/media/search.svg": "/travelly/static/media/search.cf08105ce8e621010084.svg",
-    "main.ecfe12fb.css.map": "/travelly/static/css/main.ecfe12fb.css.map",
-    "main.3ff2e4d0.js.map": "/travelly/static/js/main.3ff2e4d0.js.map",
+    "main.ed03a25a.css.map": "/travelly/static/css/main.ed03a25a.css.map",
+    "main.64364e89.js.map": "/travelly/static/js/main.64364e89.js.map",
     "787.c6362caa.chunk.js.map": "/travelly/static/js/787.c6362caa.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ecfe12fb.css",
-    "static/js/main.3ff2e4d0.js"
+    "static/css/main.ed03a25a.css",
+    "static/js/main.64364e89.js"
   ]
 }
